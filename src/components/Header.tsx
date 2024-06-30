@@ -92,6 +92,28 @@ const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
+        <div className="hidden md:flex gap-4">
+          <div className="tooltip z-30">
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <img
+                className="cursor-pointer w-6 h-6"
+                src="/images/telegram.png"
+                alt=""
+              />
+            </a>
+            <span className="tooltip-text">Coming Soon</span>
+          </div>
+          <div className="tooltip z-30">
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <img
+                className="cursor-pointer w-[26px] h-[26px]"
+                src="/images/twitter.png"
+                alt=""
+              />
+            </a>
+            <span className="tooltip-text">Coming Soon</span>
+          </div>
+        </div>
       </header>
     </div>
   );
