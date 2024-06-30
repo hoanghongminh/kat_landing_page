@@ -16,30 +16,18 @@ const Footer: React.FC = () => {
         </div>
         <nav className="flex items-center max-md:flex-col max-md:mt-6">
           <ul className="flex gap-8">
-            <a
-              href="https://cyberk.gitbook.io/xshinobi/other-information/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="" target="_blank" rel="noopener noreferrer">
               <li className="cursor-pointe hover:text-[#498ee4]">
                 Privacy Policy
               </li>
             </a>
-            <a
-              href="https://cyberk.gitbook.io/xshinobi/other-information/term-of-usage"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="" target="_blank" rel="noopener noreferrer">
               <li className="cursor-pointer hidden md:block hover:text-[#498ee4]">
                 Term and Conditions
               </li>
             </a>
           </ul>
-          <a
-            href="https://cyberk.gitbook.io/xshinobi/other-information/term-of-usage"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="" target="_blank" rel="noopener noreferrer">
             <p className="cursor-pointer md:hidden mt-4 hover:text-[#498ee4]">
               Term and Conditions
             </p>
