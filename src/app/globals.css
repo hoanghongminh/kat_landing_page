@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import url("https://fonts.cdnfonts.com/css/permanent-marker");
+@import url("https://fonts.cdnfonts.com/css/pixelify-sans");
+@import url("https://fonts.cdnfonts.com/css/rowdies"); */
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,17 +31,12 @@ body {
 /* styles/globals.css */
 #root {
   width: 100%;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
   background-color: #fbfbfb;
 }
 
 body {
   background-color: #fbfbfb;
-}
-
-.bg-header {
-  border-bottom: 1px solid #efefef;
-  background: #fff;
 }
 
 header {
@@ -74,10 +73,11 @@ header .text:hover {
 .mobile-menu {
   position: absolute;
   top: 48px;
-  right: -200px;
-  width: 200px;
+  /* right: -150px; */
+  width: 100px;
   height: fit-content;
-  background-color: #fff;
+  background-color: #e7e4e4;
+  border-radius: 12px;
   transition: left 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -86,7 +86,7 @@ header .text:hover {
 }
 
 .menu-toggle:checked + .menu-icon + .mobile-menu {
-  right: 0;
+  right: 30px;
   opacity: 1;
   pointer-events: auto;
   padding: 0 20px;
@@ -101,7 +101,9 @@ header .text:hover {
 
 .menu-items li {
   padding: 10px 0;
-  border-bottom: 1px solid #555;
+  display: flex;
+  align-items: center;
+  /* border-bottom: 1px solid #555; */
 }
 
 .menu-items li:last-child {
@@ -119,19 +121,18 @@ header .text:hover {
 }
 
 .banner h1 {
-  color: #000;
+  font-family: "Rowdies", sans-serif;
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 72px;
-  /* 112.5% */
+  text-align: center;
 }
 
-.banner h5 {
-  color: #202223;
-  font-size: 20px;
+.banner h4 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 24px;
   font-weight: 400;
   line-height: 32px;
-  /* 160% */
 }
 
 .browser {
@@ -139,53 +140,25 @@ header .text:hover {
   border: 1px solid #ebeef0;
 }
 
-.banner button.read-manual {
+.content-banner button {
   width: 164px;
-  padding: 12px 24px;
-  border-radius: 100px;
-  background: #498ee4;
-  color: #fff;
+  padding: 10px 16px 12px 16px;
+  background-color: #ffedbb;
+  border: 2px solid #5e5745;
+  box-shadow: 0px -8px 0px 0px #00000033 inset;
+  border-radius: 8px;
+  font-family: Pixelify Sans;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
 }
-
-.banner button.read-manual:hover {
-  background-color: rgb(22, 125, 189);
+.content-banner button:hover {
+  box-shadow: none;
+  background-color: #f4d990;
 }
-
-.banner button.read-manual:active {
-  background-color: #498ee4;
-}
-
-.slick-disabled {
-  opacity: 0.3;
-}
-
-.slick-dots {
-  bottom: -40px !important;
-}
-
-.slick-dots li button:before {
-  font-size: 10px !important;
-  border-radius: 50%;
-  color: #000 !important;
-  opacity: 0.2;
-}
-
-.slick-dots li.slick-active button:before {
-  color: #1da1f2 !important;
-}
-
-.slick-dots li {
-  margin: 0 !important;
-}
-
-.slick-slide img {
-  width: 50%;
-  height: 50%;
-}
-
-.bg-footer {
-  border-top: 1px solid #efefef;
-  background: #fff;
+.image-banner {
+  background-image: url("/images/bg-banner.png");
+  background-color: #eeedd8;
 }
 
 .tooltip {
@@ -227,36 +200,22 @@ header .text:hover {
   opacity: 1;
 }
 
-.banner-home {
-  z-index: 2;
-  max-width: 340px;
+/* .kbuck {
+  animation: scale 2s infinite;
+} */
+/* .join-us {
+  animation: fly-coin 2.5s infinite;
+} */
+.rank {
+  animation: scale 2.7s infinite;
 }
 
-.img-join-us {
-  top: -6%;
-  right: -8%;
-  width: 100px;
-  /* animation: scale 1s infinite; */
-  transform: rotateZ(15deg);
+.catOne {
+  animation: fly-catOne 2s infinite;
 }
 
-.img-bundle {
-  top: 48%;
-  left: -50%;
-  z-index: 1;
-  width: 150px;
-  animation: fly-coin 2.8s infinite;
-}
-
-.img-gem {
-  width: 120px;
-  bottom: -16%;
-  right: -16%;
-  animation: fly-coin 3.5s infinite;
-}
-
-.bg-layout {
-  background-image: url("/images/background.png");
+.catTwo {
+  animation: fly-catTwo 2.5s infinite;
 }
 
 @keyframes fly-coin {
@@ -272,55 +231,81 @@ header .text:hover {
     transform: translateY(-30px);
   }
 }
-/* @keyframes scale {
+@keyframes fly-catOne {
   0% {
-    transform: scale(1) rotateZ(15deg);
+    transform: translateY(100px) rotate(12deg);
   }
 
-  50% {
-    transform: scale(1.2) rotateZ(15deg);
+  40% {
+    transform: translateY(-30px) rotate(12deg);
+  }
+
+  70% {
+    transform: translateY(-30px) rotate(12deg);
   }
 
   100% {
-    transform: 1 rotateZ(15deg);
+    transform: translateY(100px) rotate(12deg);
   }
-} */
+}
+@keyframes fly-catTwo {
+  0% {
+    transform: translateY(100px) rotate(-12deg);
+  }
+
+  40% {
+    transform: translateY(-30px) rotate(-12deg);
+  }
+
+  70% {
+    transform: translateY(-30px) rotate(-12deg);
+  }
+
+  100% {
+    transform: translateY(100px) rotate(-12deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
 
 @media screen and (max-width: 1280px) {
   .banner-content {
     max-width: 570px;
   }
+  .banner h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .banner-home {
-    max-width: 280px;
-  }
-
   .banner h1 {
-    color: #000;
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 36px;
     line-height: 44px;
-    /* 137.5% */
   }
 
-  .banner h5 {
-    color: #202223;
+  .banner h4 {
     font-size: 16px;
-    font-weight: 400;
     line-height: 24px;
   }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .banner h1 {
-    color: #000;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 50px;
+  .content-banner button {
+    width: 164px;
+    font-size: 16px;
+    line-height: 24px;
   }
-}
-
-@media screen and (min-width: 1024px) {
 }

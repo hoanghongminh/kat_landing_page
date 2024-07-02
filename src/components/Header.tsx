@@ -25,14 +25,14 @@ const Header: React.FC = () => {
 
   return (
     <div className="bg-header">
-      <header className="flex justify-between px-5 py-2 md:py-4 container mx-auto">
+      <header className="flex justify-between items-center px-5 py-2 md:py-4 xl:container mx-auto border border-t-0 border-black">
         <div className="flex gap-8 max-md:w-full max-md:justify-between">
-          <div className="logo w-8 h-8 flex items-center">
+          <div className="logo w-[75px] flex items-center">
             <a href="./">
-              <img src="/images/CatCafeLogo.png" alt="" />
+              <img src="/images/logo.png" alt="" />
             </a>
           </div>
-          <div className="hidden md:flex items-center gap-6">
+          {/* <div className="hidden md:flex items-center gap-6">
             <div className="tooltip">
               <a
                 className="cursor-pointer text"
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 Docs
               </a>
             </div>
-          </div>
+          </div> */}
 
           <input
             type="checkbox"
@@ -70,47 +70,53 @@ const Header: React.FC = () => {
             ref={menuRef}
             className={`mobile-menu ${menuOpen ? "open" : ""}`}
           >
-            <ul className="menu-items md:hidden">
+            <ul className="menu-items md:hidden flex justify-center gap-4">
               <li className="cursor-pointer">
-                <a
-                  href="https://www.beautiful.ai/player/-O-LUT5aQfeKiOOMQcID"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Intro
-                </a>
+                <div className="tooltip z-30">
+                  {/* <a href="" target="_blank" rel="noopener noreferrer"> */}
+                  <img
+                    className="cursor-pointer w-6 h-6"
+                    src="/images/telegram.png"
+                    alt=""
+                  />
+                  {/* </a> */}
+                  <span className="tooltip-text">Coming Soon</span>
+                </div>
               </li>
               <li className="cursor-pointer">
-                <a
-                  href="https://capylabs.gitbook.io/katkafe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Docs
-                </a>
+                <div className="tooltip z-30">
+                  {/* <a href="" target="_blank" rel="noopener noreferrer"> */}
+                  <img
+                    className="cursor-pointer w-[26px] h-[26px]"
+                    src="/images/twitter.png"
+                    alt=""
+                  />
+                  {/* </a> */}
+                  <span className="tooltip-text">Coming Soon</span>
+                </div>
               </li>
             </ul>
           </nav>
         </div>
         <div className="hidden md:flex gap-4">
           <div className="tooltip z-30">
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <img
-                className="cursor-pointer w-6 h-6"
-                src="/images/telegram.png"
-                alt=""
-              />
-            </a>
+            {/* <a href="" target="_blank" rel="noopener noreferrer"> */}
+            <img
+              className="cursor-pointer w-6 h-6"
+              src="/images/telegram.png"
+              alt=""
+            />
+            {/* </a> */}
             <span className="tooltip-text">Coming Soon</span>
           </div>
           <div className="tooltip z-30">
-            <a href="" target="_blank" rel="noopener noreferrer">
-              <img
-                className="cursor-pointer w-[26px] h-[26px]"
-                src="/images/twitter.png"
-                alt=""
-              />
-            </a>
+            {/* <a href="" target="_blank" rel="noopener noreferrer"> */}
+            <img
+              className="cursor-pointer w-[26px] h-[26px]"
+              src="/images/twitter.png"
+              alt=""
+            />
+            {/* </a> */}
             <span className="tooltip-text">Coming Soon</span>
           </div>
         </div>
